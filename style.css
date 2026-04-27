@@ -492,6 +492,16 @@ td {
         font-size: 14px;
     }
 
+    body {
+        overflow-x: hidden;
+        /* Mencegah layar bisa digeser ke kanan-kiri yang kosong */
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
     nav ul {
         display: flex;
         justify-content: center;
@@ -513,17 +523,51 @@ td {
         font-size: 16px;
     }
 
-    /* Sembunyikan menu asli */
+    /* Menu aslinya disembunyikan dan ditaruh di bawah tombol secara rapi */
     .nav-links {
         display: none;
+        flex-direction: column;
         position: absolute;
-        background-color: white;
-        width: 100%;
-        left: 0;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        top: 60px;
+        /* Atur agar pas di bawah header */
+        right: 20px;
+        background: white;
+        width: 200px;
+        /* Jangan penuhi layar, biar estetik */
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        list-style: none;
-        padding: 0;
+        overflow: hidden;
+    }
+
+    /* Ini trik agar menu tetap muncul saat tombol atau area nav ditekan */
+    nav:active .nav-links,
+    nav:focus-within .nav-links {
+        display: flex;
+    }
+
+    form {
+        padding: 0 15px;
+        /* Beri ruang agar tidak mepet pinggir HP */
+    }
+
+    input[type="text"],
+    select,
+    input[type="date"] {
+        width: 100% !important;
+        /* Paksa inputan jadi selebar layar HP */
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        padding: 12px;
+        font-size: 16px;
+        /* Ukuran pas agar keyboard HP tidak otomatis zoom */
+    }
+
+    button[type="submit"],
+    .btn-kirim {
+        width: 100%;
+        padding: 15px;
+        font-weight: bold;
     }
 
     /* Tampilkan tombol menu */

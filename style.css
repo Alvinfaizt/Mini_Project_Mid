@@ -1,11 +1,6 @@
-/* STYLE-V2.CSS
-   File ini telah diperbaiki:
-   1. Typo font-size 3,5rem menjadi 3.5rem (Baris 89)
-   2. Menghapus duplikasi kode (redundant) di bagian bawah
-   3. Merapikan struktur Media Query agar tidak bentrok
-   4. Mengoptimalkan tombol form untuk tampilan HP
-*/
-
+/* ==========================================
+   1. RESET & GLOBAL STYLES 
+   ========================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,10 +14,31 @@ body {
     height: 100%;
     width: 100%;
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden;
 }
 
-/* --- NAVIGATION --- */
+body {
+    background: linear-gradient(-45deg, #f8faf8, #f1f5f9, #e2e8f0, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ==========================================
+   2. NAVIGATION & LOGO
+   ========================================== */
 nav {
     position: fixed;
     top: 0;
@@ -35,8 +51,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
+    padding: 0 2%;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -44,6 +61,7 @@ nav {
     font-weight: 800;
     letter-spacing: -1px;
     color: #0f172a;
+    font-family: 'poppins', sans-serif;
     cursor: default;
     user-select: none;
 }
@@ -58,9 +76,18 @@ nav ul {
     display: flex;
     gap: 20px;
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
 }
 
 nav ul li a {
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
     text-decoration: none;
     color: #475569;
     transition: 0.3s;
@@ -68,7 +95,6 @@ nav ul li a {
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 1px;
-    padding-bottom: 5px;
 }
 
 nav ul li a:hover {
@@ -82,12 +108,11 @@ nav ul li a.active {
     border-bottom: 2px solid #38bdf8;
 }
 
-.menu-toggle {
-    display: none;
-}
-
-/* --- HERO SECTION --- */
+/* ==========================================
+   3. HERO SECTION
+   ========================================== */
 .hero {
+    height: 100vh;
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -95,16 +120,30 @@ nav ul li a.active {
     align-items: center;
     justify-content: center;
     text-align: center;
+    background-color: #f1f5f9;
     background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(assets/beranda1.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 0 10%;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 10% 40px;
+    box-sizing: border-box;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h1 {
+    margin: 0 0 20px 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.hero p {
+    margin: 0 0 30px 0;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
-    /* PERBAIKAN: Dari 3,5rem ke 3.5rem */
     color: #1e293b;
     margin-bottom: 20px;
     font-weight: 700;
@@ -119,7 +158,9 @@ nav ul li a.active {
     max-width: 600px;
 }
 
-/* --- BUTTONS --- */
+/* ==========================================
+   4. BUTTONS & ACTIONS
+   ========================================== */
 .btn {
     text-decoration: none;
     padding: 15px 30px;
@@ -128,65 +169,100 @@ nav ul li a.active {
     border-radius: 50px;
     font-weight: 600;
     transition: 0.3s;
-    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
 }
 
 .btn:hover {
     background-color: #0f172a;
+}
+
+.btn-layanan {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #0f172a;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s;
+}
+
+.btn-layanan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover,
+.btn-submit:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
 }
 
-/* --- TABLES --- */
+/* ==========================================
+   5. TABLES SECTION
+   ========================================== */
 .table-section {
-    padding: 50px 10%;
+    animation: fadeInUp 1s ease-out;
+    justify-content: flex-start;
+    padding-top: 100px;
 }
 
-.table-container {
-    width: 100%;
-    overflow-x: auto;
+.table-section h2 {
+    margin-bottom: 10px;
+    color: #0f172a;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 30px;
     background: white;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-th,
-td {
-    padding: 18px 25px;
-    text-align: left;
+    border-spacing: 0;
 }
 
 th {
     background-color: #f8fafc;
     color: #64748b;
+    text-align: left;
+    padding: 15px;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 td {
+    padding: 15px;
     border-bottom: 1px solid #f1f5f9;
-    color: #1e293b;
+    color: #1e239b;
+}
+
+th,
+td {
+    padding: 18px 25px;
 }
 
 tr:hover {
     background-color: #f0f9ff;
+    transition: 0.2s;
 }
 
-/* --- FORMS --- */
-.form-section {
+/* ==========================================
+   6. FORMS & INPUTS
+   ========================================== */
+.form section {
     max-width: 500px;
-    margin: 50px auto;
+    margin: 0 auto;
     background: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 1s ease-out;
+    justify-content: flex-start;
+    padding-top: 100px;
 }
 
 .input-group {
@@ -228,13 +304,154 @@ select:focus {
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
 }
 
 .btn-submit:hover {
     background-color: #38bdf8;
 }
 
-/* --- ANIMATIONS --- */
+/* ==========================================
+   7. DOCTOR CARDS & ABOUT
+   ========================================== */
+.doctors-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.doctor-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.doctor-card {
+    background: white;
+    width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    animation: fadeInUp 1s ease-out;
+}
+
+.doctor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.img-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor-info {
+    padding: 25px;
+}
+
+.specialist {
+    color: #38bdf8;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.about-image img {
+    max-width: 350px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 10% 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* ==========================================
+   8. FOOTER
+   ========================================== */
+footer {
+    background-color: #0f172a;
+    color: #f8fafc;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 60px;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-logo span {
+    color: #38bdf8;
+}
+
+.footer-content p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.footer-info {
+    border-top: 1px solid #1e239b;
+    padding-top: 20px;
+    font-size: 0.8rem;
+}
+
+.footer-info strong {
+    color: #ffffff;
+}
+
+.social-links {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.social-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #38bdf8;
+}
+
+/* ==========================================
+   9. MISC & ANIMATIONS
+   ========================================== */
+.container {
+    padding: 50px 10%;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Kunci agar tidak meluber ke samping */
+    padding: 10px 20px;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -247,84 +464,452 @@ select:focus {
     }
 }
 
-.hero,
-.table-section,
 .form-section {
     animation: fadeInUp 1s ease-out;
+    justify-content: flex-start;
+    padding-top: 100px;
 }
 
-/* --- MEDIA QUERIES (HP & TABLET) --- */
-@media (max-width: 768px) {
-    .menu-toggle {
+/* ==========================================
+   10. MEDIA QUERIES (Mobile Responsiveness)
+   ========================================== */
+@media (max-width: 600px) {
+
+    /* Membuat logo dan menu bertumpuk (atas-bawah) bukan sampingan */
+    header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Menambah jarak agar konten tidak tertutup header saat menu dibuka */
+    main,
+    section {
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+
+    /* Pastikan header punya posisi yang stabil */
+    header {
+        position: relative;
+        z-index: 1001;
+        /* Lebih tinggi dari konten agar tidak tertimpa gambar */
+        background: white;
+    }
+
+    /* Membuat tabel bisa digeser ke samping tanpa merusak lebar website */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 10px;
+    }
+
+    table {
+        width: 100%;
+        min-width: 500px;
+        /* Memastikan tabel tidak gepeng, tapi bisa di-scroll */
+        font-size: 14px;
+    }
+
+    body {
+        overflow-x: hidden;
+        /* Mencegah layar bisa digeser ke kanan-kiri yang kosong */
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+        border-bottom: 1px solid #f1f5f9;
+        /* Garis tipis antar menu agar rapi */
+    }
+
+    nav ul li a {
         display: block;
+        padding: 10px;
+        font-size: 16px;
     }
 
-    .menu-toggle button {
-        background-color: #38bdf8;
-        color: white;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
+    /* Menu aslinya disembunyikan dan ditaruh di bawah tombol secara rapi */
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 80px;
-        right: 5%;
-        background: rgba(255, 255, 255, 0.95);
+        top: 70px;
+        right: 20px;
+        /* Efek Kaca Transparan */
+        background: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(10px);
         width: 220px;
         border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
         padding: 10px 0;
+        /* Animasi Muncul */
         animation: slideDown 0.4s ease forwards;
-    }
-
-    /* Munculkan menu saat area nav di-hover (cocok untuk HP) */
-    nav:hover .nav-links,
-    nav:active .nav-links {
-        display: flex;
+        /* ... kode sebelumnya ... */
+        text-align: center;
+        /* Memastikan teks di tengah secara horizontal */
+        padding: 15px 0;
+        /* Memberi ruang atas & bawah yang sama */
+        display: none;
+        /* Tetap sembunyi sebelum aktif */
+        flex-direction: column;
+        align-items: center;
+        /* Menjaga elemen li tetap di tengah */
     }
 
     .nav-links li {
-        margin: 0;
+        border-bottom: 1px solid #eee;
         width: 100%;
+        /* Agar area klik luas */
     }
 
+    /* Animasi warna saat menu di-tap/klik */
     .nav-links li a {
-        display: block;
-        padding: 15px;
-        text-align: center;
-        border-bottom: 1px solid #f1f5f9;
-        letter-spacing: 2px;
+        font-family: 'Poppins', sans-serif;
         font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        /* Memberi kesan modern & clean */
+        text-transform: uppercase;
+        color: #1e293b;
+        transition: 0.3s;
+    }
+
+    .nav-links li a:active {
+        color: #00aaff;
+        background: rgba(0, 170, 255, 0.05);
+        /* Warna berbeda untuk menu yang sedang aktif (opsional) */
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Ini trik agar menu tetap muncul saat tombol atau area nav ditekan */
+    nav:active .nav-links,
+    nav:focus-within .nav-links {
+        display: flex;
+    }
+
+    form {
+        padding: 0 15px;
+        /* Beri ruang agar tidak mepet pinggir HP */
+    }
+
+    input[type="text"],
+    select,
+    input[type="date"] {
+        width: 100% !important;
+        /* Paksa inputan jadi selebar layar HP */
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        padding: 12px;
+        font-size: 16px;
+        /* Ukuran pas agar keyboard HP tidak otomatis zoom */
+    }
+
+    button[type="submit"],
+    .btn-kirim {
+        width: 100%;
+        padding: 15px;
+        font-weight: bold;
+    }
+
+    /* Tampilkan tombol menu */
+    .menu-toggle {
+        display: block;
+        text-align: right;
+        padding: 10px;
+    }
+
+    .menu-toggle button {
+        background-color: #00aaff;
+        /* Warna biru medic kamu */
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+    }
+
+    /* KONSEP SEPERTI PILIH SPESIALIS: 
+       Munculkan menu saat area nav di-hover */
+    nav:hover .nav-links {
+        display: block;
+    }
+
+    /* 1. RESET & BASE STYLE */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(-45deg, #f8faf8, #f1f5f9, #e2e8f0, #ffffff);
+        background-size: 400% 400%;
+        animation: gradientMove 15s ease infinite;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    @keyframes gradientMove {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* 2. NAVIGATION BAR (DESKTOP FIRST) */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(15px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5%;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #0f172a;
+    }
+
+    .logo span {
+        color: #38bdf8;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #475569;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+        color: #38bdf8;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    /* 3. HERO SECTION */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('assets/beranda1.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 0 10%;
     }
 
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 3.5rem;
+        /* Koreksi koma ke titik */
+        color: #1e293b;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        color: #64748b;
+        max-width: 650px;
+        margin-bottom: 30px;
+    }
+
+    /* 4. MEDIA QUERY (MOBILE - MAX 768px) */
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+
+        .menu-toggle button {
+            background: #38bdf8;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* DROPDOWN MENU STYLE */
+        .nav-links {
+            display: none;
+            /* Sembunyi default */
+            flex-direction: column;
+            position: absolute;
+            top: 85px;
+            right: 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            width: 200px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            animation: slideDown 0.4s ease forwards;
+        }
+
+        /* Logika klik (saat ditekan menu muncul) */
+        nav:active .nav-links,
+        nav:focus-within .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0;
+            width: 100%;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        /* Content Adjustment */
+        .hero-content h1 {
+            font-size: 2.2rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            min-width: 600px;
+        }
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+}
+
+/* Sembunyikan tombol menu kalau di Laptop */
+@media (min-width: 601px) {
+    .menu-toggle {
+        display: none;
+    }
+
+
+    /* Agar teks utama di tengah gambar tidak terlalu rapat ke pinggir */
+    .hero-content h1 {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+
+    /* MASUKKAN KODE BARU DI SINI */
+    .hero-content {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .grid-container,
+    .layanan-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* Penutup Media Query */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+
+    .hero-content h1 {
+        font-size: 2rem;
+        /* Ukuran lebih kecil untuk HP */
     }
 
     .hero-content p {
         font-size: 1rem;
+        padding: 0 20px;
+        /* Beri jarak di samping */
     }
 
-    .btn-submit {
-        width: 100%;
-    }
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .container {
+        width: 90%;
+        margin: 0 auto;
     }
 }

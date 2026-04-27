@@ -118,6 +118,15 @@ nav ul li a.active {
     padding: 50px 10%;
 }
 
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Kunci agar tidak meluber ke samping */
+    padding: 10px 20px;
+}
+
 .table-section h2 {
     margin-bottom: 10px;
     color: #0f172a;
@@ -458,5 +467,32 @@ td {
     .container {
         width: 90%;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* Membuat logo dan menu bertumpuk (atas-bawah) bukan sampingan */
+    header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 15px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        /* Kecilkan sedikit font agar muat */
+    }
+
+    /* Agar teks utama di tengah gambar tidak terlalu rapat ke pinggir */
+    .hero-content h1 {
+        font-size: 28px;
+        padding: 0 10px;
     }
 }

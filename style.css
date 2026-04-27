@@ -478,16 +478,39 @@ td {
         gap: 10px;
     }
 
+    /* Membuat tabel bisa digeser ke samping tanpa merusak lebar website */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 10px;
+    }
+
+    table {
+        width: 100%;
+        min-width: 500px;
+        /* Memastikan tabel tidak gepeng, tapi bisa di-scroll */
+        font-size: 14px;
+    }
+
     nav ul {
         display: flex;
-        gap: 15px;
-        padding: 0;
         justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+        border-bottom: 1px solid #f1f5f9;
+        /* Garis tipis antar menu agar rapi */
     }
 
     nav ul li a {
-        font-size: 14px;
-        /* Kecilkan sedikit font agar muat */
+        display: block;
+        padding: 10px;
+        font-size: 16px;
     }
 
     /* Agar teks utama di tengah gambar tidak terlalu rapat ke pinggir */
@@ -495,4 +518,25 @@ td {
         font-size: 28px;
         padding: 0 10px;
     }
+
+    /* MASUKKAN KODE BARU DI SINI */
+    .hero-content {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .grid-container,
+    .layanan-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* Penutup Media Query */
 }

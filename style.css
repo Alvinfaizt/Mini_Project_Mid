@@ -513,6 +513,62 @@ td {
         font-size: 16px;
     }
 
+    /* Sembunyikan menu asli */
+    .nav-links {
+        display: none;
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        left: 0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        list-style: none;
+        padding: 0;
+    }
+
+    /* Tampilkan tombol menu */
+    .menu-toggle {
+        display: block;
+        text-align: right;
+        padding: 10px;
+    }
+
+    .menu-toggle button {
+        background-color: #00aaff;
+        /* Warna biru medic kamu */
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+    }
+
+    /* KONSEP SEPERTI PILIH SPESIALIS: 
+       Munculkan menu saat area nav di-hover */
+    nav:hover .nav-links {
+        display: block;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px;
+        color: #333;
+        text-decoration: none;
+    }
+}
+
+/* Sembunyikan tombol menu kalau di Laptop */
+@media (min-width: 601px) {
+    .menu-toggle {
+        display: none;
+    }
+
+
     /* Agar teks utama di tengah gambar tidak terlalu rapat ke pinggir */
     .hero-content h1 {
         font-size: 28px;

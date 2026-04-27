@@ -478,6 +478,21 @@ td {
         gap: 10px;
     }
 
+    /* Menambah jarak agar konten tidak tertutup header saat menu dibuka */
+    main,
+    section {
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+
+    /* Pastikan header punya posisi yang stabil */
+    header {
+        position: relative;
+        z-index: 1001;
+        /* Lebih tinggi dari konten agar tidak tertimpa gambar */
+        background: white;
+    }
+
     /* Membuat tabel bisa digeser ke samping tanpa merusak lebar website */
     .table-container {
         overflow-x: auto;
@@ -541,26 +556,40 @@ td {
         padding: 10px 0;
         /* Animasi Muncul */
         animation: slideDown 0.4s ease forwards;
+        /* ... kode sebelumnya ... */
+        text-align: center;
+        /* Memastikan teks di tengah secara horizontal */
+        padding: 15px 0;
+        /* Memberi ruang atas & bawah yang sama */
+        display: none;
+        /* Tetap sembunyi sebelum aktif */
+        flex-direction: column;
+        align-items: center;
+        /* Menjaga elemen li tetap di tengah */
     }
 
     .nav-links li {
         border-bottom: 1px solid #eee;
+        width: 100%;
+        /* Agar area klik luas */
     }
 
     /* Animasi warna saat menu di-tap/klik */
     .nav-links li a {
-        padding: 15px 20px;
-        color: #334155;
-        font-weight: 500;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        /* Memberi kesan modern & clean */
+        text-transform: uppercase;
+        color: #1e293b;
+        transition: 0.3s;
     }
 
     .nav-links li a:active {
-        background-color: #e2f5ff;
         color: #00aaff;
-        padding-left: 30px;
-        /* Efek bergeser sedikit saat diklik */
+        background: rgba(0, 170, 255, 0.05);
+        /* Warna berbeda untuk menu yang sedang aktif (opsional) */
     }
 
     @keyframes slideDown {

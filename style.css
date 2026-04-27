@@ -528,16 +528,51 @@ td {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
-        /* Atur agar pas di bawah header */
+        top: 70px;
         right: 20px;
-        background: white;
-        width: 200px;
-        /* Jangan penuhi layar, biar estetik */
-        border-radius: 10px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        /* Efek Kaca Transparan */
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        width: 220px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         z-index: 1000;
-        overflow: hidden;
+        padding: 10px 0;
+        /* Animasi Muncul */
+        animation: slideDown 0.4s ease forwards;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Animasi warna saat menu di-tap/klik */
+    .nav-links li a {
+        padding: 15px 20px;
+        color: #334155;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links li a:active {
+        background-color: #e2f5ff;
+        color: #00aaff;
+        padding-left: 30px;
+        /* Efek bergeser sedikit saat diklik */
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     /* Ini trik agar menu tetap muncul saat tombol atau area nav ditekan */
@@ -594,16 +629,7 @@ td {
         display: block;
     }
 
-    .nav-links li {
-        border-bottom: 1px solid #eee;
-    }
 
-    .nav-links li a {
-        display: block;
-        padding: 15px;
-        color: #333;
-        text-decoration: none;
-    }
 }
 
 /* Sembunyikan tombol menu kalau di Laptop */

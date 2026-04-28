@@ -253,7 +253,7 @@ tr:hover {
 /* ==========================================
    6. FORMS & INPUTS
    ========================================== */
-.form section {
+.form-section {
     max-width: 500px;
     margin: 0 auto;
     background: white;
@@ -462,12 +462,6 @@ header .container {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.form-section {
-    animation: fadeInUp 1s ease-out;
-    justify-content: flex-start;
-    padding-top: 100px;
 }
 
 /* ==========================================

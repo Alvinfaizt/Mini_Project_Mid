@@ -168,7 +168,6 @@ nav ul li a.active {
     color: white;
     border-radius: 50px;
     font-weight: 600;
-    transition: 0.3s;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
 }
@@ -303,7 +302,6 @@ select:focus {
     border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
 }

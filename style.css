@@ -799,6 +799,13 @@ header .container {
         font-weight: 600;
     }
 
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
     /* DROPDOWN MENU STYLE */
     .nav-links {
         display: none;
@@ -836,7 +843,8 @@ header .container {
 
     /* Content Adjustment */
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        /* Ukuran lebih kecil untuk HP */
     }
 
     .table-container {
@@ -846,6 +854,17 @@ header .container {
 
     table {
         min-width: 600px;
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        padding: 0 20px;
+        /* Beri jarak di samping */
     }
 }
 
@@ -858,31 +877,5 @@ header .container {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-        padding: 20px 0;
-    }
-
-
-    .hero-content h1 {
-        font-size: 2rem;
-        /* Ukuran lebih kecil untuk HP */
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-        padding: 0 20px;
-        /* Beri jarak di samping */
-    }
-
-    .container {
-        width: 90%;
-        margin: 0 auto;
     }
 }

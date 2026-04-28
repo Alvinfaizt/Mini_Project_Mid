@@ -237,7 +237,7 @@ th {
 td {
     padding: 15px;
     border-bottom: 1px solid #f1f5f9;
-    color: #1e239b;
+    color: #38bdf8;
 }
 
 th,
@@ -411,7 +411,7 @@ footer {
 }
 
 .footer-info {
-    border-top: 1px solid #1e239b;
+    border-top: 1px solid #38bdf8;
     padding-top: 20px;
     font-size: 0.8rem;
 }

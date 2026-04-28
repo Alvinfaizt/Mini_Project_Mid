@@ -584,7 +584,7 @@ header .container {
     }
 
     .nav-links li a:active {
-        color: #00aaff;
+        color: #38bdf8;
         background: rgba(0, 170, 255, 0.05);
         /* Warna berbeda untuk menu yang sedang aktif (opsional) */
     }
@@ -639,7 +639,7 @@ header .container {
     }
 
     .menu-toggle button {
-        background-color: #00aaff;
+        background-color: #38bdf8;
         /* Warna biru medic kamu */
         color: white;
         border: none;

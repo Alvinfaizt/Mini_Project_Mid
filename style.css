@@ -749,83 +749,6 @@ header .container {
         margin-bottom: 30px;
     }
 
-    /* 4. MEDIA QUERY (MOBILE - MAX 768px) */
-    @media (max-width: 768px) {
-        .menu-toggle {
-            display: block;
-        }
-
-        .menu-toggle button {
-            background: #38bdf8;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-
-        /* DROPDOWN MENU STYLE */
-        .nav-links {
-            display: none;
-            /* Sembunyi default */
-            flex-direction: column;
-            position: absolute;
-            top: 85px;
-            right: 5%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            width: 200px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            padding: 10px 0;
-            animation: slideDown 0.4s ease forwards;
-        }
-
-        /* Logika klik (saat ditekan menu muncul) */
-        nav:active .nav-links,
-        nav:focus-within .nav-links {
-            display: flex;
-        }
-
-        .nav-links li {
-            margin: 0;
-            width: 100%;
-        }
-
-        .nav-links li a {
-            display: block;
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        /* Content Adjustment */
-        .hero-content h1 {
-            font-size: 2.2rem;
-        }
-
-        .table-container {
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-
-        table {
-            min-width: 600px;
-        }
-    }
-
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
 
 }
 
@@ -838,7 +761,6 @@ header .container {
 
     /* Agar teks utama di tengah gambar tidak terlalu rapat ke pinggir */
     .hero-content h1 {
-        font-size: 28px;
         padding: 0 10px;
     }
 
@@ -862,6 +784,83 @@ header .container {
     }
 
     /* Penutup Media Query */
+}
+
+/* 4. MEDIA QUERY (MOBILE - MAX 768px) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle button {
+        background: #38bdf8;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+    /* DROPDOWN MENU STYLE */
+    .nav-links {
+        display: none;
+        /* Sembunyi default */
+        flex-direction: column;
+        position: absolute;
+        top: 85px;
+        right: 5%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        width: 200px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        animation: slideDown 0.4s ease forwards;
+    }
+
+    /* Logika klik (saat ditekan menu muncul) */
+    nav:active .nav-links,
+    nav:focus-within .nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    /* Content Adjustment */
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        margin: 20px 0;
+    }
+
+    table {
+        min-width: 600px;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 768px) {

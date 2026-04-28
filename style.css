@@ -655,24 +655,6 @@ header .container {
         display: block;
     }
 
-    /* 1. RESET & BASE STYLE */
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: linear-gradient(-45deg, #f8faf8, #f1f5f9, #e2e8f0, #ffffff);
-        background-size: 400% 400%;
-        animation: gradientMove 15s ease infinite;
-        overflow-x: hidden;
-        -webkit-font-smoothing: antialiased;
-    }
-
     @keyframes gradientMove {
         0% {
             background-position: 0% 50%;

@@ -138,14 +138,10 @@ nav ul li a.active {
     line-height: 1.2;
 }
 
-.hero p {
-    margin: 0 0 30px 0;
-}
-
 .hero-content h1 {
     font-size: 3.5rem;
     color: #1e293b;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 700;
     line-height: 1.2;
 }
@@ -156,6 +152,10 @@ nav ul li a.active {
     color: #64748b;
     line-height: 1.6;
     max-width: 600px;
+    margin: 0 auto 30px;
+    /* Tambahkan 'auto' di sini agar rata tengah */
+    text-align: center;
+    /* Memastikan teks di dalamnya juga rata tengah */
 }
 
 /* ==========================================
